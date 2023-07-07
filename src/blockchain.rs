@@ -89,7 +89,7 @@ impl Blockchain {
             }
 
             self.unspent_outputs.retain(|output| !block_spent.contains(output));
-            self.unspent_outputs.extend(block_created);
+             self.unspent_outputs.extend(block_created);
         }
 
         self.blocks.push(block);
