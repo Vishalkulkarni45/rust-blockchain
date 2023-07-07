@@ -7,6 +7,8 @@ pub struct Output {
     pub value: u64,
 }
 
+
+
 impl Hashable for Output {
     fn bytes (&self) -> Vec<u8> {
         let mut bytes = vec![];

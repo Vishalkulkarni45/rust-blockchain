@@ -56,6 +56,8 @@ impl Hashable for Block {
         bytes.extend(&u128_bytes(&self.timestamp));
         bytes.extend(&self.prev_block_hash);
         bytes.extend(&u64_bytes(&self.nonce));
+
+        
         bytes.extend(
             self.transactions
                 .iter()
@@ -67,6 +69,8 @@ impl Hashable for Block {
         bytes
     }
 }
+  
+
 
 pub fn check_difficulty (hash: &Hash, difficulty: u128) -> bool {
     difficulty > difficulty_bytes_as_u128(&hash)

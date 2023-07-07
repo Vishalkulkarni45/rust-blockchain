@@ -33,6 +33,7 @@ impl Blockchain {
             return Err(BlockValidationErr::MismatchedIndex);
         } else if !block::check_difficulty(&block.hash(), block.difficulty) {
             return Err(BlockValidationErr::InvalidHash);
+            
         } else if i != 0 {
             // Not genesis block
             let prev_block = &self.blocks[i - 1];
